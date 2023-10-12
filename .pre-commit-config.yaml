@@ -1,0 +1,12 @@
+repos:
+-   repo: https://github.com/psf/black
+    rev: 23.9.1
+    hooks:
+    - id: black
+      args: ['--line-length', '88']  # Specify your preferred line length
+      language_version: python3.9
+
+-   repo: https://github.com/PyCQA/flake8
+    rev: 6.1.0
+    hooks:
+    - id: flake8
