@@ -9,7 +9,6 @@ def compute_uptime(store_id, start_date=None, end_date=None):
     if not end_date:
         end_date = datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0) + timedelta(days=1)
     timezone = get_store_timezone(store_id)
-    print("timezone fetched")
     business_hours = get_store_business_hours(store_id)
     hours_open = compute_business_hours_overlap(business_hours, timezone, start_date, end_date)
     uptime = hours_open / timedelta(hours=24) * 100
